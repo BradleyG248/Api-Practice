@@ -11,7 +11,7 @@ namespace apiPractice.Repositories
     private readonly IDbConnection _db;
     public PollsRepository(IDbConnection db)
     {
-      db = _db;
+      _db = db;
     }
     internal IEnumerable<Poll> GetAllPolls()
     {
