@@ -31,5 +31,17 @@ namespace apiPractice.Controllers
         return BadRequest(e.Message);
       }
     }
+    [HttpPost]
+    public ActionResult<Poll> CreatePoll([FromBody] Poll newPoll)
+    {
+      try
+      {
+        return Ok(_ps.CreatePoll(newPoll));
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
   }
 }

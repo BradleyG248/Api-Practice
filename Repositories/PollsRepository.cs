@@ -18,5 +18,17 @@ namespace apiPractice.Repositories
       string sql = "SELECT * FROM polls";
       return _db.Query<Poll>(sql);
     }
+    internal Poll CreatePoll(Poll newPoll)
+    {
+      string sql = @"
+            INSERT INTO polls
+            (name)
+            VALUES
+            (@Name);
+            SELECT LAST_INSERT_ID();
+            ";
+      newPoll.Id = _db.ExecuteScalar<int>(sql, newPoll);
+      return newPoll;
+    }
   }
 }

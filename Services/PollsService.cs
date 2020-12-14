@@ -16,5 +16,9 @@ namespace apiPractice.Services
     {
       return _repo.GetAllPolls();
     }
+    public Poll CreatePoll(Poll newPoll)
+    {
+      return _repo.CreatePoll(newPoll);
+    }
   }
 }

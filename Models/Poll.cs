@@ -6,6 +6,6 @@ namespace apiPractice.Models
   public class Poll
   {
     public string Name { get; set; }
-    public List<string> Questions { get; set; }
+    public int Id { get; set; }
   }
 }
