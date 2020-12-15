@@ -20,5 +20,19 @@ namespace apiPractice.Services
     {
       return _repo.CreatePoll(newPoll);
     }
+    public Poll GetById(int Id)
+    {
+      return _repo.GetById(Id);
+    }
+    public Poll EditPoll(Poll editedPoll)
+    {
+      Poll original = GetById(editedPoll.Id);
+      original.Name = editedPoll.Name != null ? editedPoll.Name : original.Name;
+      return _repo.EditPoll(editedPoll);
+    }
+    public String DeletePoll(int Id)
+    {
+      return _repo.DeletePoll(Id);
+    }
   }
 }

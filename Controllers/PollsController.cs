@@ -31,12 +31,49 @@ namespace apiPractice.Controllers
         return BadRequest(e.Message);
       }
     }
+    [HttpGet("{Id}")]
+    public ActionResult<Poll> GetPollById(int Id)
+    {
+      try
+      {
+        return _ps.GetById(Id);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
     [HttpPost]
     public ActionResult<Poll> CreatePoll([FromBody] Poll newPoll)
     {
       try
       {
         return Ok(_ps.CreatePoll(newPoll));
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
+    [HttpPut("{Id}")]
+    public ActionResult<Poll> EditPoll(int Id, [FromBody] Poll editedPoll)
+    {
+      try
+      {
+        editedPoll.Id = Id;
+        return Ok(_ps.EditPoll(editedPoll));
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
+    [HttpDelete("{Id}")]
+    public ActionResult<String> DeletePoll(int Id)
+    {
+      try
+      {
+        return _ps.DeletePoll(Id);
       }
       catch (Exception e)
       {

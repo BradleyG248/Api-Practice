@@ -29,6 +29,18 @@ namespace apiPractice
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+      services.AddCors(options =>
+      {
+        options.AddPolicy("PollsPolicy", builder =>
+              {
+                builder.WithOrigins(new string[]{
+                            "http://localhost:4200"
+                      })
+                          .AllowAnyMethod()
+                          .AllowAnyHeader()
+                          .AllowCredentials();
+              });
+      });
       services.AddControllers();
 
       services.AddScoped<IDbConnection>(x => CreateDbConnection());
@@ -49,7 +61,7 @@ namespace apiPractice
       {
         app.UseDeveloperExceptionPage();
       }
-
+      app.UseCors("PollsPolicy");
       app.UseHttpsRedirection();
       app.UseRouting();
       app.UseAuthorization();
