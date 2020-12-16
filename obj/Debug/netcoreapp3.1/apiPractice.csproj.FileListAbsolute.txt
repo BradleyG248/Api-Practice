@@ -1,4 +1,3 @@
-C:\source\work\apiPractice\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\source\work\apiPractice\bin\Debug\netcoreapp3.1\package-lock.json
 C:\source\work\apiPractice\bin\Debug\netcoreapp3.1\package.json
 C:\source\work\apiPractice\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -35,3 +34,4 @@ C:\source\work\apiPractice\bin\Debug\netcoreapp3.1\System.Configuration.Configur
 C:\source\work\apiPractice\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\source\work\apiPractice\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
 C:\source\work\apiPractice\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\source\work\apiPractice\bin\Debug\netcoreapp3.1\appsettings.json
