@@ -6,13 +6,22 @@ USE shoestore4;
 --   img VARCHAR(255),
 --   PRIMARY KEY (id)
 -- );
-CREATE TABLE questions (
+-- CREATE TABLE questions (
+--   id int NOT NULL AUTO_INCREMENT,
+--   name VARCHAR(255) NOT NULL,
+--   PRIMARY KEY (id),
+--   pollId int NOT NULL,
+--   FOREIGN KEY (pollId)
+--   REFERENCES polls(id)
+--   ON DELETE CASCADE
+-- )
+CREATE TABLE options (
   id int NOT NULL AUTO_INCREMENT,
-  name VARCHAR(255) NOT NULL,
+  value VARCHAR(255) NOT NULL,
   PRIMARY KEY (id),
-  pollId int NOT NULL,
-  FOREIGN KEY (pollId)
-  REFERENCES polls(id)
+  questionId int NOT NULL,
+  FOREIGN KEY (questionId)
+  REFERENCES questions(id)
   ON DELETE CASCADE
 )
 

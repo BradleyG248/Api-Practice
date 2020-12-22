@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace apiPractice.Models
 {
-  public class Question
+  public class Option
   {
     public string Name { get; set; }
+    public int QuestionId { get; set; }
     public int Id { get; set; }
-    public int PollId { get; set; }
   }
 }
