@@ -47,6 +47,10 @@ namespace apiPractice
 
       services.AddTransient<PollsService>();
       services.AddTransient<PollsRepository>();
+      services.AddTransient<QuestionsService>();
+      services.AddTransient<QuestionsRepository>();
+      services.AddTransient<OptionsService>();
+      services.AddTransient<OptionsRepository>();
     }
     private IDbConnection CreateDbConnection()
     {
